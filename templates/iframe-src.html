@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<!-- Or if you want a more recent canary version -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+<video id="video" height="100%" width="100%"></video>
+<script>
+  var video = document.getElementById('video');
+  if(Hls.isSupported()) {
+  	var hls = new Hls();
+    hls.loadSource('https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+  	alert("add correct extension named ")
+    video.addEventListener('loadedmetadata',function() {
+      video.play();
+    });
+  }
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
