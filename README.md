@@ -1,4 +1,4 @@
-# configure-w3u8-video
+# configure-m3u8-video
 #install reqirements.txt
 #now run app.py
 #run "localhost/stream"
